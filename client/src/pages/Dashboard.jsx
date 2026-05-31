@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   const fetchSessions = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/sessions');
+      const res = await axios.get('https://devsync-backend-asqm.onrender.com/api/sessions');
       setSessions(res.data);
     } catch (err) {
       setError('Failed to load sessions');
@@ -32,7 +32,7 @@ const Dashboard = () => {
   const createSession = async () => {
     if (!title.trim()) return;
     try {
-      const res = await axios.post('http://localhost:5000/api/sessions', {
+      const res = await axios.post('https://devsync-backend-asqm.onrender.com/api/sessions', {
         title, language
       });
       setSessions([res.data, ...sessions]);
@@ -44,7 +44,7 @@ const Dashboard = () => {
 
   const deleteSession = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/sessions/${id}`);
+      await axios.delete(`https://devsync-backend-asqm.onrender.com/api/sessions/${id}`);
       setSessions(sessions.filter(s => s._id !== id));
     } catch (err) {
       setError('Failed to delete session');

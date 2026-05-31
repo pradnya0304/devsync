@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const register = async (name, email, password) => {
-    const res = await axios.post('http://localhost:5000/api/auth/register', {
+    const res = await axios.post('https://devsync-backend-asqm.onrender.com/api/auth/register', {
       name, email, password
     });
     setUser(res.data);
@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const login = async (email, password) => {
-    const res = await axios.post('http://localhost:5000/api/auth/login', {
+    const res = await axios.post('https://devsync-backend-asqm.onrender.com/api/auth/login', {
       email, password
     });
     setUser(res.data);

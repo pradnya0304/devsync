@@ -31,8 +31,8 @@ const Editor = () => {
     const fetchData = async () => {
       try {
         const [sessionRes, commentsRes] = await Promise.all([
-          axios.get(`http://localhost:5000/api/sessions/${sessionId}`),
-          axios.get(`http://localhost:5000/api/comments/${sessionId}`)
+          axios.get(`https://devsync-backend-asqm.onrender.com/api/sessions/${sessionId}`),
+          axios.get(`https://devsync-backend-asqm.onrender.com/api/comments/${sessionId}`)
         ]);
         setSession(sessionRes.data);
         setCode(sessionRes.data.code);
@@ -49,7 +49,7 @@ const Editor = () => {
 
   // Socket.io setup
   useEffect(() => {
-    socketRef.current = io('http://localhost:5000');
+    socketRef.current = io('https://devsync-backend-asqm.onrender.com');
 
     socketRef.current.emit('join-session', {
       sessionId,
@@ -78,7 +78,7 @@ const Editor = () => {
   const saveCode = useCallback(async (codeToSave) => {
     try {
       setSaveStatus('saving...');
-      await axios.put(`http://localhost:5000/api/sessions/${sessionId}/code`, {
+      await axios.put(`https://devsync-backend-asqm.onrender.com/api/sessions/${sessionId}/code`, {
         code: codeToSave
       });
       setSaveStatus('saved');
@@ -118,7 +118,7 @@ const Editor = () => {
     if (!newComment.trim()) return;
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/comments/${sessionId}`,
+        `https://devsync-backend-asqm.onrender.com/api/comments/${sessionId}`,
         { text: newComment, line: selectedLine }
       );
       setComments(prev => [...prev, res.data]);
@@ -135,7 +135,7 @@ const Editor = () => {
   // Delete comment
   const deleteComment = async (commentId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/comments/${commentId}`);
+      await axios.delete(`https://devsync-backend-asqm.onrender.com/api/comments/${commentId}`);
       setComments(prev => prev.filter(c => c._id !== commentId));
     } catch (err) {
       console.error('Failed to delete comment');
