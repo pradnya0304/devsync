@@ -428,3 +428,62 @@
 .comment-delete-btn:hover {
   opacity: 1;
 }
+
+/* Mobile Editor Fix */
+@media (max-width: 640px) {
+  .editor-nav {
+    padding: 0 10px;
+    gap: 8px;
+  }
+
+  .editor-session-title {
+    display: none;
+  }
+
+  .editor-nav-right {
+    gap: 6px;
+  }
+
+  .toggle-comments-btn {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .back-btn {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .editor-main {
+    flex-direction: column;
+  }
+
+  .editor-wrapper {
+    height: 50vh;
+  }
+
+  .comments-panel {
+    display: flex !important;
+    width: 100% !important;
+    height: 50vh;
+    border-left: none;
+    border-top: 1px solid #334155;
+  }
+
+  .add-comment-box {
+    padding: 10px;
+  }
+
+  .comment-input {
+    font-size: 12px;
+  }
+
+  .comment-submit-btn {
+    padding: 7px;
+    font-size: 12px;
+  }
+
+  .comments-list {
+    padding: 8px;
+  }
+}
