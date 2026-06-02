@@ -177,16 +177,24 @@ const Dashboard = () => {
                     })}
                   </p>
                   <div className="session-card-actions">
-                    <button className="btn-open" onClick={() => navigate(`/editor/${session._id}`)}>
-                   Open Editor →
-                    </button>
-                    <button
-                      className="btn-delete"
-                      onClick={() => deleteSession(session._id)}
-                    >
-                      🗑
-                    </button>
-                  </div>
+                  <button className="btn-open" onClick={() => navigate(`/editor/${session._id}`)}>
+                    Open Editor →
+                  </button>
+                  <button
+                    className="btn-share"
+                    onClick={() => {
+                      navigator.clipboard.writeText(`https://devsync-swart.vercel.app/editor/${session._id}`);
+                      alert('Session link copied! Share it with your team.');
+                    }}
+                  >
+                    🔗
+                  </button>
+                  <button
+                    className="btn-delete"
+                    onClick={() => deleteSession(session._id)}
+                  >
+                  </button>
+                </div>
                 </div>
               ))}
             </div>

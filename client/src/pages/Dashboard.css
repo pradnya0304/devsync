@@ -397,6 +397,22 @@
   }
 }
 
+.btn-share {
+  padding: 7px 10px;
+  background: transparent;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  font-size: 14px;
+}
+
+.btn-share:hover {
+  border-color: #6366f1;
+  background-color: rgba(99, 102, 241, 0.08);
+}
+
+
 /* Mobile */
 @media (max-width: 480px) {
   .stats-row {
