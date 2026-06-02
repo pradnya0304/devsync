@@ -193,6 +193,7 @@ const Dashboard = () => {
                     className="btn-delete"
                     onClick={() => deleteSession(session._id)}
                   >
+                    🗑
                   </button>
                 </div>
                 </div>
