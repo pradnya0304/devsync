@@ -6,37 +6,36 @@
 
 html, body, #root {
   width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #0f172a;
+  min-height: 100%;
+  background-color: #0d0d1a;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0f172a;
-  color: #f8fafc;
+  color: #f0e6ff;
   -webkit-font-smoothing: antialiased;
+  background: #0d0d1a;
 }
 
 a {
   text-decoration: none;
-  color: #6366f1;
+  color: #b347ea;
+  transition: color 0.2s;
 }
 
 a:hover {
-  color: #818cf8;
+  color: #ff6eb4;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #0d0d1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: linear-gradient(#b347ea, #ff6eb4);
   border-radius: 3px;
 }
