@@ -290,6 +290,7 @@
   background: linear-gradient(135deg, rgba(179, 71, 234, 0.03), rgba(255, 110, 180, 0.03));
   opacity: 0;
   transition: opacity 0.2s;
+  pointer-events: none;
 }
 
 .session-card:hover {
