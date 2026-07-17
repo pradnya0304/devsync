@@ -147,3 +147,72 @@ devsync/
 ├── socket/
 │   └── socketHandler.js
 └── server.js
+
+---
+
+##  API Endpoints
+
+### Auth
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/register` | Register new user |
+| POST | `/api/auth/login` | Login user |
+| GET | `/api/auth/me` | Get logged in user |
+
+### Sessions
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/sessions` | Create new session |
+| GET | `/api/sessions` | Get my sessions |
+| GET | `/api/sessions/:id` | Get session by ID |
+| PUT | `/api/sessions/:id/code` | Update session code |
+| DELETE | `/api/sessions/:id` | Delete session |
+
+### Comments
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/comments/:sessionId` | Add comment |
+| GET | `/api/comments/:sessionId` | Get session comments |
+| DELETE | `/api/comments/:id` | Delete comment |
+
+---
+
+##  Real-Time Socket Events
+
+| Event | Direction | Description |
+|-------|-----------|-------------|
+| `join-session` | Client → Server | Join a code session room |
+| `code-change` | Client → Server | Broadcast code update |
+| `code-update` | Server → Client | Receive code from others |
+| `add-comment` | Client → Server | Broadcast new comment |
+| `new-comment` | Server → Client | Receive comment from others |
+| `users-update` | Server → Client | Online users list update |
+| `leave-session` | Client → Server | Leave the session room |
+
+---
+
+##  Key Technical Decisions
+
+- **Socket.io over WebSockets** — Easier fallback handling and room management
+- **Monaco Editor** — Production-grade editor used in VS Code itself
+- **JWT + bcrypt** — Industry standard stateless auth with secure password hashing
+- **MongoDB Atlas** — Cloud-hosted database for production reliability
+- **Auto-save debouncing** — 2 second delay prevents database spam on every keystroke
+- **CSS Glassmorphism** — Unique violet/pink dark theme with backdrop blur effects
+
+---
+
+##  Author
+
+**Pradnya Zagade**
+- GitHub: [@pradnya0304](https://github.com/pradnya0304)
+
+---
+
+##  License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+ If you found this project impressive, please give it a star on GitHub!
